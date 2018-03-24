@@ -17,8 +17,19 @@
             Группа компаний ГИД
         </div>
         <div class="type-phone">
-            <input type="tel" class="text-area" placeholder="Ваш номер для связи">
-            <button class="call-btn">заказать звонок</button>
+            <form class="needs-validation" novalidate>
+                <input type="tel" class="text-area" name="phone" placeholder="Ваш номер для связи" pattern="[0-9](11)" required>
+                <div class="invalid-feedback">
+                    Пожалуйста, вводите номер телефона в следующем формате: <strong>XXXXXXXXXXX</strong>.
+                </div>
+                <button class="call-btn">заказать звонок</button>
+            </form>
+            <div class="done-btn-wrapper">
+
+            </div>
+            <div class="fail-btn-wrapper">
+
+            </div>
         </div>
 
         <div>Грузчики/переезды</div>

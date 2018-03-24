@@ -8,11 +8,6 @@ const createComponent = (component) => {
 const toJSON = function (form) {
   const obj = {};
   const elements = form.querySelectorAll('input');
-  const textarea = form.querySelector('textarea');
-  const select = form.querySelector('select');
-
-  obj['text'] = textarea.value;
-  obj['whom'] = select.value;
 
   for (let i = 0; i < elements.length; ++i) {
     const element = elements[i];
