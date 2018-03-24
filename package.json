@@ -5,7 +5,7 @@
     "dev-start": "webpack-dev-server --open --config webpack.dev.js",
     "watch": "webpack --watch",
     "build": "webpack --config webpack.prod.js",
-    "build-start": "webpack --config webpack.prod.js && node server.js"
+    "build-start": "webpack --config webpack.prod.js && node server.js",
     "start": "node server.js"
   },
   "devDependencies": {
