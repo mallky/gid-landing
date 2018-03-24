@@ -1,0 +1,147 @@
+@orange: rgb(230, 157, 9);
+@dark-orange: rgb(172, 119, 8);
+@orange-text: #e59c09;
+@white: #FFF;
+@white-placeholder: #FFF;
+@gray: rgba(228, 228, 228, 0.502);
+@dark-gray: rgb(85, 85, 85);
+
+#block {
+  background: url('../../images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+
+  .top-block {
+    font-size: 2.5rem;
+    padding: 4rem 0 5rem 3rem;
+
+    .phone {
+      // white-space: nowrap;
+      & > div:first-child {
+        font-size: 2.2rem;
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  .mid-block {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    padding: 0.5rem;
+
+    .head {
+      font-size: 2.5rem;
+    }
+    .price {
+      font-size: 1.8rem;
+
+      & > span {
+        display: inline-block;
+        margin: 0 0.5rem;
+      }
+    }
+
+    .type-phone {
+      font-size: 1.5rem;
+      margin: 2rem;
+
+      .call-btn {
+        border-radius: 0.9rem;
+        background-color: @orange;
+        width: 19.6rem;
+        height: 4.1rem;
+        border: 1px solid rgb(230, 157, 9);
+        position: relative;
+
+        &:hover {
+          background: @dark-orange;
+          border: 1px solid @dark-orange;
+        }
+      }
+
+      .text-area {
+        border-radius: 0.9rem;
+        background-color: @gray;
+        width: 24rem;
+        height: 4.1rem;
+        border: 1px solid transparent;
+        position: relative;
+        left: 2.2rem;
+        padding: 0 1.2rem;
+        color: @white;
+
+        &::-webkit-input-placeholder {
+          color: @white-placeholder;
+        }
+        &::-moz-placeholder {
+          color: @white-placeholder;
+        }
+        &:-moz-placeholder {
+          color: @white-placeholder;
+        }
+        &:-ms-input-placeholder {
+          color: @white-placeholder;
+        }
+      }
+
+      & + div {
+        margin-top: 5rem;
+      }
+    }
+
+    .orange {
+      color: @orange-text;
+      font-size: 2.3rem;
+    }
+  }
+
+  hr {
+    margin: 7rem 5rem 5rem;
+    border-top: 1px solid @white;
+  }
+
+  .bot-block {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin: 2rem 5rem 0;
+    padding-bottom: 2.4rem;
+
+    .icons {
+      a {
+        margin: 0 2rem;
+        filter: grayscale(50%);
+
+        &:hover {
+          filter: grayscale(0%);
+        }
+      }
+    }
+
+    .conf {
+      line-height: 1.7;
+      text-align: left;
+
+      a {
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+          color: @dark-gray;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .info {
+      font-size: 1.5rem;
+    }
+  }
+}

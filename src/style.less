@@ -1,0 +1,170 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+    font-family: 'Circe Regular';
+    src: url('../font/Circe-Regular.eot');
+    src: url('../font/Circe-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../font/Circe-Regular.woff') format('woff'),
+    url('../font/Circe-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#root {
+    color: #FFF;
+    font-family: "Circe Regular";
+}
+
+*:focus, button:focus {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+@media screen and (orientation: portrait) {
+    #block {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .top-block {
+        & > div {
+            &:nth-child(2) {
+                display: none;
+            }
+
+            &:last-child {
+                -ms-flex: 0 0 35%;
+                flex: 0 0 35%;
+                max-width: 35%;
+            }
+
+            &:first-child {
+                -ms-flex: 0 0 20%;
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+  html {
+    font-size: 14px;
+
+    #block {
+      height: 100vh;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 12px;
+
+        .icons {
+            flex-direction: column;
+            & > div {
+                margin: 0.5rem;
+            }
+        }
+        .top-block {
+            font-size: 2rem !important;
+            & > div {
+                text-align: right !important;
+                &:last-child {
+                    -ms-flex: 0 0 40%;
+                    flex: 0 0 40%;
+                    max-width: 40%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 8px;
+
+        .icons {
+            flex-direction: column;
+            & > div {
+                margin: 0.5rem;
+            }
+        }
+
+        .top-block {
+            font-size: 2rem !important;
+            & > div {
+                text-align: right !important;
+                &:last-child {
+                    -ms-flex: 0 0 50%;
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
+        }
+
+        .bot-block {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+
+            & > div {
+                padding: 0 1rem;
+
+                &.col-sm-2, &.col-sm-3 {
+                    -ms-flex: 0 0 30%;
+                    flex: 0 0 30%;
+                    max-width: 30%;
+                }
+
+                &.col-sm-1 {
+                    display: none;
+                }
+
+                &.col-sm-6 {
+                    -ms-flex: 0 0 40%;
+                    flex: 0 0 40%;
+                    max-width: 40%;
+                }
+            }
+            .conf {
+                font-size: 1.2rem;
+            }
+        }
+
+      #block {
+        hr {
+          margin: 8rem 5rem;
+        }
+      }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .mid-block {
+        .type-phone {
+            .text-area {
+                width: 19.6rem !important;
+                //position: static !important;
+            }
+        }
+    }
+
+    .bot-block {
+        .conf {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    html {
+        font-size: 7px;
+    }
+
+}
