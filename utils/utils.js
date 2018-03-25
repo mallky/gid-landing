@@ -22,6 +22,10 @@ const toJSON = function (form) {
   return JSON.stringify(obj);
 };
 
+const isTouchDevice = () => {
+  return 'ontouchstart' in document.documentElement;
+};
+
 class Column {
   constructor (root) {
     this.root = root;
@@ -36,5 +40,6 @@ class Column {
 
 export {
   toJSON,
+  isTouchDevice,
   Column
 };

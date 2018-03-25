@@ -1,6 +1,6 @@
 import './block.less';
 import $ from 'jquery';
-import { toJSON, Column } from '../../utils/utils';
+import { toJSON, Column, isTouchDevice } from '../../utils/utils';
 import DoneModalWindow from '../send-done/send-done';
 import FailModalWindow from '../send-failed/send-fail';
 
@@ -15,7 +15,9 @@ export default class Block extends Column {
 
     doneModalWindow.init();
     failModalWindow.init();
-    
+
+    !isTouchDevice() && $('[title="Telegram"]').attr('href', 'https://t.me/MakarKuzmichev');
+
     this.validateForm();
   }
 
