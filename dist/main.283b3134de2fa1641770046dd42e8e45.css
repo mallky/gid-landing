@@ -31,6 +31,11 @@ button {
     font-size: 1.2rem !important;
   }
 }
+@media screen and (max-width: 1396px) {
+  #block .top-block .phone > div:first-child {
+    font-size: 1.9rem !important;
+  }
+}
 @media screen and (max-width: 1360px) {
   .top-block > div:nth-child(2) {
     display: none;

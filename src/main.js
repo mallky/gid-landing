@@ -2,6 +2,7 @@ import './style.less';
 import 'bootstrap';
 import $ from 'jquery';
 import Block from './main/block';
+import { isTouchDevice } from '../utils/utils';
 
 class App {
   init () {
@@ -10,6 +11,10 @@ class App {
 
     const block = new Block(this.root);
     block.init();
+    
+    if (!isTouchDevice()) {
+      this.root.querySelector('#block').style.height = '100%';
+    }
   }
 }
 
