@@ -125,7 +125,15 @@ button {
     margin: 8rem 5rem;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 440px) {
+  #block .top-block .phone > div:first-child {
+    font-size: 1.8rem !important;
+  }
+}
+@media screen and (max-width: 396px) {
+  #block .top-block .phone > div:first-child {
+    font-size: 1.7rem !important;
+  }
   .mid-block .type-phone .text-area {
     width: 19.6rem !important;
   }
@@ -135,7 +143,16 @@ button {
 }
 @media screen and (max-width: 380px) {
   html {
-    font-size: 7px;
+    font-size: 6.5px;
+  }
+}
+@media screen and (max-width: 319px) {
+  html {
+    font-size: 6.5px;
+  }
+  html .mid-block .type-phone .text-area {
+    width: 19.6rem !important;
+    position: static !important;
   }
 }
 #block {
