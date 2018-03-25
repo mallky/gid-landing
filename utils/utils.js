@@ -5,19 +5,9 @@ const createComponent = (component) => {
   return $(component)[0];
 };
 
-const toJSON = function (form) {
+const toJSON = function (number) {
   const obj = {};
-  const elements = form.querySelectorAll('input');
-
-  for (let i = 0; i < elements.length; ++i) {
-    const element = elements[i];
-    const name = element.name;
-    const value = element.value;
-
-    if (name) {
-      obj[ name ] = value;
-    }
-  }
+  obj[ 'phone' ] = number;
 
   return JSON.stringify(obj);
 };

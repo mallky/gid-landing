@@ -3,6 +3,7 @@ import $ from 'jquery';
 import { toJSON, Column, isTouchDevice } from '../../utils/utils';
 import DoneModalWindow from '../send-done/send-done';
 import FailModalWindow from '../send-failed/send-fail';
+import InvalidModalWindow from '../invalid-modal/invalid-modal';
 
 const block = require('./block.html');
 
@@ -12,9 +13,11 @@ export default class Block extends Column {
     
     const doneModalWindow = new DoneModalWindow(this.root.querySelector('.done-btn-wrapper'));
     const failModalWindow = new FailModalWindow(this.root.querySelector('.fail-btn-wrapper'));
+    const invalidModalWindow = new InvalidModalWindow(this.root.querySelector('.invalid-btn-wrapper'));
 
     doneModalWindow.init();
     failModalWindow.init();
+    invalidModalWindow.init();
 
     !isTouchDevice() && $('[title="Telegram"]').attr('href', 'https://t.me/MakarKuzmichev');
 
@@ -28,7 +31,15 @@ export default class Block extends Column {
       form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const json = toJSON(form);
+        const number = Block.getNumber(form.querySelector('input').value);
+
+        if (Block.isValid(number)) {
+          $('#invalid').modal('show');
+
+          return false;
+        }
+
+        const json = toJSON(number);
         const xhr = new XMLHttpRequest();
 
         xhr.open('POST', '/telegram', true);
@@ -52,5 +63,13 @@ export default class Block extends Column {
         form.classList.remove('was-validated');
       }, false);
     });
+  }
+
+  static isValid(value) {
+    return !value;
+  }
+
+  static getNumber(value) {
+    return value.replace(/\+|\s+|\D/g, '').substr(0, 13);
   }
 }
