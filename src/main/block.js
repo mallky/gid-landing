@@ -19,8 +19,8 @@ export default class Block extends Column {
     failModalWindow.init();
     invalidModalWindow.init();
 
-    !isTouchDevice() && $('[title="Telegram"]').attr('href', 'https://t.me/MakarKuzmichev');
-
+    this.forDesktop();
+    this.forMobile();
     this.validateForm();
   }
 
@@ -71,5 +71,19 @@ export default class Block extends Column {
 
   static getNumber(value) {
     return value.replace(/\+|\s+|\D/g, '').substr(0, 13);
+  }
+
+  forDesktop () {
+    if (!isTouchDevice()) {
+      $('[title="Telegram"]').attr('href', 'https://t.me/MakarKuzmichev');
+    }
+  }
+
+  forMobile () {
+    if (isTouchDevice()) {
+      const phone = $('.phone-number');
+
+      phone.html(`<a href="tel:${phone.text().replace(/-/g, '')}">${phone.text()}</a>`);
+    }
   }
 }

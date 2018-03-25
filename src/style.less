@@ -10,6 +10,10 @@
     font-style: normal;
 }
 
+body {
+    background-color: black;
+}
+
 #root {
     color: #FFF;
     font-family: "Circe Regular";
@@ -145,6 +149,10 @@ button {
                     -ms-flex: 0 0 40%;
                     flex: 0 0 40%;
                     max-width: 40%;
+
+                    & > div:first-child {
+                        margin-bottom: 2rem;
+                    }
                 }
             }
             .conf {
@@ -154,7 +162,7 @@ button {
 
       #block {
         hr {
-          margin: 8rem 5rem;
+          margin: 8rem 5rem 3rem;
         }
       }
     }

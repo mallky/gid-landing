@@ -10,6 +10,9 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  background-color: black;
+}
 #root {
   color: #FFF;
   font-family: "Circe Regular";
@@ -123,11 +126,14 @@ button {
     flex: 0 0 40%;
     max-width: 40%;
   }
+  html .bot-block > div.col-sm-6 > div:first-child {
+    margin-bottom: 2rem;
+  }
   html .bot-block .conf {
     font-size: 1.2rem;
   }
   html #block hr {
-    margin: 8rem 5rem;
+    margin: 8rem 5rem 3rem;
   }
 }
 @media screen and (max-width: 440px) {
@@ -174,6 +180,14 @@ button {
 }
 #block .top-block .phone > div:first-child {
   font-size: 2rem;
+}
+#block .top-block .phone .phone-number a {
+  color: white;
+  text-decoration: underline;
+}
+#block .top-block .phone .phone-number a:hover {
+  color: white;
+  text-decoration: underline;
 }
 #block .top-block .logo {
   display: flex;
