@@ -83,6 +83,9 @@ button {
     flex: 0 0 40%;
     max-width: 40%;
   }
+  html .bot-block {
+    align-items: center !important;
+  }
 }
 @media screen and (max-width: 768px) {
   html {
