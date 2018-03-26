@@ -82,6 +82,10 @@ export default class Block extends Column {
         $('html').css('font-size', '10px');
         $('.img-fluid').css('width', '80%');
         $('hr').css('margin-top', '9rem');
+      } else if (windowHeight >= 700 && windowHeight < 850) {
+        $('html').css('font-size', '11px');
+        $('.img-fluid').css('width', '90%');
+        $('hr').css('margin-top', '11rem');
       }
     }
   }
