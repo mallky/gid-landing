@@ -76,6 +76,13 @@ export default class Block extends Column {
   forDesktop () {
     if (!isTouchDevice()) {
       $('[title="Telegram"]').attr('href', 'https://t.me/MakarKuzmichev');
+
+      const windowHeight = document.documentElement.clientHeight;
+      if (windowHeight < 700) {
+        $('html').css('font-size', '10px');
+        $('.img-fluid').css('width', '80%');
+        $('hr').css('margin-top', '9rem');
+      }
     }
   }
 
