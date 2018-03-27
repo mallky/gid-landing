@@ -25,44 +25,34 @@ export default class Block extends Column {
   }
 
   validateForm () {
-    const forms = document.getElementsByClassName('needs-validation');
+    const form = document.querySelector('.needs-validation');
+    
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
 
-    const validation = Array.prototype.filter.call(forms, (form) => {
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
+      const number = Block.getNumber(form.querySelector('input').value);
+      if (Block.isValid(number)) {
+        $('#invalid').modal('show');
 
-        const number = Block.getNumber(form.querySelector('input').value);
+        return false;
+      }
 
-        if (Block.isValid(number)) {
-          $('#invalid').modal('show');
+      var $form = $('form');
+      $.ajax({
+        type: $form.attr('method'),
+        url: 'send.php',
+        data: $form.serialize()
+      }).done(function() {
+        console.log('success');
+        $('#done').modal('show');
+      }).fail(function() {
+        console.log('fail');
+        $('#fail').modal('show');
+      });
 
-          return false;
-        }
-
-        const json = toJSON(number);
-        const xhr = new XMLHttpRequest();
-
-        xhr.open('POST', '/telegram', true);
-        xhr.onload = () => {
-          if (xhr.status === 200) {
-            console.log('DONE');
-            $('#exampleModalCenter').modal('hide');
-            $('#done').modal('show');
-          }
-          if (xhr.status !== 200) {
-            console.log('MISTAKE');
-            $('#exampleModalCenter').modal('hide');
-            $('#fail').modal('show');
-          }
-        };
-
-        xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.send(json);
-
-        form.reset();
-        form.classList.remove('was-validated');
-      }, false);
-    });
+      form.reset();
+      form.classList.remove('was-validated');
+    }, false);
   }
 
   static isValid(value) {
@@ -70,7 +60,7 @@ export default class Block extends Column {
   }
 
   static getNumber(value) {
-    return value.replace(/\+|\s+|\D/g, '').substr(0, 13);
+    return value.match(/[^\()\-\+\s0123456789]/) ? '' : value.replace(/\s+|\D/g, '').substr(0, 13);
   }
 
   forDesktop () {
