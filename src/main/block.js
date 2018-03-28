@@ -65,6 +65,7 @@ export default class Block extends Column {
 
   forDesktop () {
     if (!isTouchDevice()) {
+      $('.mid-block').find('.head').find('br').remove();
       $('[title="Telegram"]').attr('href', 'https://t.me/MakarKuzmichev');
 
       const windowHeight = document.documentElement.clientHeight;
