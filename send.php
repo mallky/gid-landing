@@ -7,17 +7,13 @@ if (isset($_POST['phone'])) {
 
     mail($to, $subject, $message, $headers);
 
-// преобразуем массив в URL-кодированную строку
-$vars = http_build_query($message);
-// создаем параметры контекста
-$options = array(
-    'http' => array(  
-                'method'  => 'POST',  // метод передачи данных
-                'header'  => 'Content-type: application/x-www-form-urlencoded',  // заголовок 
-                'content' => $vars,  // переменные
-            )  
-);  
-$context  = stream_context_create($options);  // создаём контекст потока
-$result = file_get_contents('http://test.web/index.php', false, $context); //отправляем запрос
+    /**
+     *  Send message to telegram
+     */
+    $access_token = '385381114:AAERSywbBwSVSEu_bFiHgnyq8rgJ6VPznZg';
+    $api = 'https://api.telegram.org/bot' . $access_token;
+    $chat_id = '-281173730';
+
+    file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message));
 }
 ?>
