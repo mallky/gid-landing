@@ -38,7 +38,7 @@ button {
     #block {
         .bot-block {
             & > div {
-                font-size: 1.2rem !important;
+                font-size: 1.8rem !important;
             }
         }
     }
@@ -52,10 +52,6 @@ button {
 @media screen and (max-width: 1360px) {
     .top-block {
         & > div {
-            &:nth-child(2) {
-                display: none;
-            }
-
             &:last-child {
                 -ms-flex: 0 0 35%;
                 flex: 0 0 35%;
@@ -113,13 +109,6 @@ button {
     html {
         font-size: 8px;
 
-        .icons {
-            flex-direction: column;
-            & > div {
-                margin: 0.5rem;
-            }
-        }
-
         .top-block {
             font-size: 2rem !important;
             & > div {
@@ -132,32 +121,24 @@ button {
             }
         }
 
+        .mid-block {
+            .type-phone {
+                form {
+                    & > * {
+                        height: 6.2rem !important;
+                        width: 30rem !important;
+                        font-size: 2.3rem;
+                    }
+                }
+            }
+        }
+
         .bot-block {
             margin-left: 0 !important;
             margin-right: 0 !important;
 
             & > div {
                 padding: 0 1rem;
-
-                &.col-sm-2, &.col-sm-3 {
-                    -ms-flex: 0 0 30%;
-                    flex: 0 0 30%;
-                    max-width: 30%;
-                }
-
-                &.col-sm-1 {
-                    display: none;
-                }
-
-                &.col-sm-6 {
-                    -ms-flex: 0 0 40%;
-                    flex: 0 0 40%;
-                    max-width: 40%;
-
-                    & > div:first-child {
-                        margin-bottom: 2rem;
-                    }
-                }
             }
             .conf {
                 font-size: 1.2rem;
@@ -166,29 +147,78 @@ button {
 
       #block {
         hr {
-          margin: 8rem 5rem 3rem;
+          margin: 6rem 5rem 3rem;
         }
       }
     }
 }
 
+@media screen and (min-width: 577px) and (max-width: 767px) {
+    .bot-block {
+        .col-sm-12 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.333333% !important;
+            flex: 0 0 33.333333% !important;
+            max-width: 33.333333% !important;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .mid-block {
+        .type-phone {
+            form {
+                & > * {
+                    position: static !important;
+                }
+            }
+        }
+    }
+
+    .bot-block {
+        & > div {
+            
+            &.icons {
+                font-size: 3rem;
+                order: 1;
+                margin-bottom: 5rem;
+            }
+
+            &.col-sm-4 {
+               &:first-of-type {
+                   order: 2;
+                   -ms-flex: 0 0 50%;
+                   flex: 0 0 50%;
+                   max-width: 50%;
+               }
+               
+                &:last-of-type {
+                    -ms-flex: 0 0 50%;
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    order: 3;
+
+                    & > div:first-child {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 440px) {
     #block .top-block .phone > div:first-child {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
     }
 }
 @media screen and (max-width: 396px) {
     #block .top-block .phone > div:first-child {
-        font-size: 1.7rem !important;
+        font-size: 1.5rem !important;
     }
-
-    .mid-block {
-        .type-phone {
-            .text-area {
-                width: 19.6rem !important;
-                //position: static !important;
-            }
-        }
+    
+    #block .bot-block .icons img {
+        width: 40px !important;
+        height: 40px !important;
     }
 
     .bot-block {
@@ -208,14 +238,5 @@ button {
 @media screen and (max-width: 319px) {
     html {
         font-size: 6.5px;
-
-        .mid-block {
-            .type-phone {
-                .text-area {
-                    width: 19.6rem !important;
-                    position: static !important;
-                }
-            }
-        }
     }
 }

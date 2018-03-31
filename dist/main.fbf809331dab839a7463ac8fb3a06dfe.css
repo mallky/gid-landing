@@ -31,7 +31,7 @@ button {
 }
 @media screen and (min-width: 1025px) and (max-width: 1554px) {
   #block .bot-block > div {
-    font-size: 1.2rem !important;
+    font-size: 1.8rem !important;
   }
 }
 @media screen and (max-width: 1396px) {
@@ -40,9 +40,6 @@ button {
   }
 }
 @media screen and (max-width: 1360px) {
-  .top-block > div:nth-child(2) {
-    display: none;
-  }
   .top-block > div:last-child {
     -ms-flex: 0 0 35%;
     flex: 0 0 35%;
@@ -91,12 +88,6 @@ button {
   html {
     font-size: 8px;
   }
-  html .icons {
-    flex-direction: column;
-  }
-  html .icons > div {
-    margin: 0.5rem;
-  }
   html .top-block {
     font-size: 2rem !important;
   }
@@ -108,6 +99,11 @@ button {
     flex: 0 0 50%;
     max-width: 50%;
   }
+  html .mid-block .type-phone form > * {
+    height: 6.2rem !important;
+    width: 30rem !important;
+    font-size: 2.3rem;
+  }
   html .bot-block {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -115,41 +111,58 @@ button {
   html .bot-block > div {
     padding: 0 1rem;
   }
-  html .bot-block > div.col-sm-2,
-  html .bot-block > div.col-sm-3 {
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
-    max-width: 30%;
-  }
-  html .bot-block > div.col-sm-1 {
-    display: none;
-  }
-  html .bot-block > div.col-sm-6 {
-    -ms-flex: 0 0 40%;
-    flex: 0 0 40%;
-    max-width: 40%;
-  }
-  html .bot-block > div.col-sm-6 > div:first-child {
-    margin-bottom: 2rem;
-  }
   html .bot-block .conf {
     font-size: 1.2rem;
   }
   html #block hr {
-    margin: 8rem 5rem 3rem;
+    margin: 6rem 5rem 3rem;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 767px) {
+  .bot-block .col-sm-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333% !important;
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mid-block .type-phone form > * {
+    position: static !important;
+  }
+  .bot-block > div.icons {
+    font-size: 3rem;
+    order: 1;
+    margin-bottom: 5rem;
+  }
+  .bot-block > div.col-sm-4:first-of-type {
+    order: 2;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .bot-block > div.col-sm-4:last-of-type {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    order: 3;
+  }
+  .bot-block > div.col-sm-4:last-of-type > div:first-child {
+    margin-bottom: 2rem;
   }
 }
 @media screen and (max-width: 440px) {
   #block .top-block .phone > div:first-child {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
   }
 }
 @media screen and (max-width: 396px) {
   #block .top-block .phone > div:first-child {
-    font-size: 1.7rem !important;
+    font-size: 1.5rem !important;
   }
-  .mid-block .type-phone .text-area {
-    width: 19.6rem !important;
+  #block .bot-block .icons img {
+    width: 40px !important;
+    height: 40px !important;
   }
   .bot-block .conf {
     font-size: 1.2rem;
@@ -164,10 +177,6 @@ button {
   html {
     font-size: 6.5px;
   }
-  html .mid-block .type-phone .text-area {
-    width: 19.6rem !important;
-    position: static !important;
-  }
 }
 #block {
   background: url(images/9fc7d7b48ce30f3ea691ec729cd42413.jpg) no-repeat center center fixed;
@@ -180,6 +189,9 @@ button {
 #block .top-block {
   font-size: 2.5rem;
   padding: 4rem 0 5rem 3rem;
+}
+#block .top-block .phone {
+  padding-right: 3rem;
 }
 #block .top-block .phone > div:first-child {
   font-size: 2rem;
@@ -197,13 +209,17 @@ button {
   justify-content: flex-start;
   align-items: center;
 }
+#block .top-block .logo .small {
+  font-size: 1.5rem;
+  min-width: 14.1rem;
+}
 #block .mid-block {
   font-size: 2.4rem;
   line-height: 1.4;
   padding: 0.5rem;
 }
 #block .mid-block .head {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 #block .mid-block .price {
   font-size: 1.8rem;
@@ -219,6 +235,7 @@ button {
 #block .mid-block .type-phone .call-btn {
   border-radius: 0.9rem;
   background-color: #e69d09;
+  font-weight: bold;
   width: 19.6rem;
   height: 4.1rem;
   border: 1px solid #e69d09;
@@ -230,7 +247,7 @@ button {
 }
 #block .mid-block .type-phone .text-area {
   border-radius: 0.9rem;
-  background-color: rgba(228, 228, 228, 0.502);
+  background-color: #8f8f8f;
   width: 24rem;
   height: 4.1rem;
   border: 1px solid transparent;
@@ -251,22 +268,24 @@ button {
 #block .mid-block .type-phone .text-area:-ms-input-placeholder {
   color: #FFF;
 }
-#block .mid-block .type-phone + div {
-  margin-top: 5rem;
-}
 #block .mid-block .orange {
   color: #e59c09;
   font-size: 2.3rem;
 }
 #block hr {
-  margin: 12rem 5rem 5rem;
-  border-top: 1px solid #FFF;
+  margin: 8rem 5rem 3rem;
+  visibility: hidden;
 }
 #block .bot-block {
   font-size: 1.5rem;
-  line-height: 1.4;
+  line-height: 1.6;
   margin: 2rem 5rem 0;
-  padding-bottom: 2.4rem;
+  padding: 2.4rem 1rem;
+  background: rgba(110, 110, 110, 0.8);
+  border-radius: 1rem;
+}
+#block .bot-block .icons > div:first-of-type {
+  margin-bottom: 2rem;
 }
 #block .bot-block .icons a {
   margin: 0 2rem;
@@ -275,16 +294,20 @@ button {
 #block .bot-block .icons a:hover {
   filter: grayscale(0%);
 }
+#block .bot-block .icons img {
+  width: 50px;
+  height: 50px;
+}
 #block .bot-block .conf {
   line-height: 1.7;
   text-align: left;
 }
-#block .bot-block .conf a {
+#block .bot-block a {
   color: white;
   text-decoration: underline;
 }
-#block .bot-block .conf a:hover {
-  color: #555555;
+#block .bot-block a:hover {
+  color: #8f8f8f;
   text-decoration: underline;
 }
 #block .bot-block .info {
@@ -292,4 +315,7 @@ button {
 }
 #block .modal-content {
   color: black;
+}
+#block .main-footer {
+  padding-bottom: 2rem;
 }

@@ -22,6 +22,9 @@ export default class Block extends Column {
     this.forDesktop();
     this.forMobile();
     this.validateForm();
+
+    const srcLogo = $('#block > img').attr('src');
+    $(document.head).append(`<link rel="icon" type="image/png" href="${srcLogo}"/>`);
   }
 
   validateForm () {
@@ -65,18 +68,22 @@ export default class Block extends Column {
 
   forDesktop () {
     if (!isTouchDevice()) {
-      $('.mid-block').find('.head').find('br').remove();
-      $('[title="Telegram"]').attr('href', 'https://t.me/MakarKuzmichev');
-
       const windowHeight = document.documentElement.clientHeight;
+
+      $('.bot-block').find('img').css({
+        'width': '60px',
+        'height': '60px'
+      });
       if (windowHeight < 700) {
         $('html').css('font-size', '10px');
-        $('.img-fluid').css('width', '80%');
-        $('hr').css('margin-top', '9rem');
+        $('.bot-block').find('img').css({
+          'width': '45px',
+          'height': '45px'
+        });
+        $('hr').css('margin-top', '0');
       } else if (windowHeight >= 700 && windowHeight < 850) {
         $('html').css('font-size', '11px');
-        $('.img-fluid').css('width', '90%');
-        $('hr').css('margin-top', '11rem');
+        $('hr').css('margin-top', '4rem');
       }
     }
   }

@@ -4,7 +4,7 @@
 @white: #FFF;
 @white-placeholder: #FFF;
 @gray: rgba(228, 228, 228, 0.502);
-@dark-gray: rgb(85, 85, 85);
+@dark-gray: rgb(143, 143, 143);
 
 #block {
   background: url('../../images/background.jpg') no-repeat center center fixed;
@@ -19,7 +19,8 @@
     padding: 4rem 0 5rem 3rem;
 
     .phone {
-      // white-space: nowrap;
+      padding-right: 3rem;
+
       & > div:first-child {
         font-size: 2rem;
       }
@@ -41,6 +42,11 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
+
+      .small {
+        font-size: 1.5rem;
+        min-width: 14.1rem;
+      }
     }
   }
 
@@ -50,7 +56,7 @@
     padding: 0.5rem;
 
     .head {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
     .price {
       font-size: 1.8rem;
@@ -68,6 +74,7 @@
       .call-btn {
         border-radius: 0.9rem;
         background-color: @orange;
+        font-weight: bold;
         width: 19.6rem;
         height: 4.1rem;
         border: 1px solid rgb(230, 157, 9);
@@ -81,7 +88,7 @@
 
       .text-area {
         border-radius: 0.9rem;
-        background-color: @gray;
+        background-color: @dark-gray;
         width: 24rem;
         height: 4.1rem;
         border: 1px solid transparent;
@@ -103,10 +110,6 @@
           color: @white-placeholder;
         }
       }
-
-      & + div {
-        margin-top: 5rem;
-      }
     }
 
     .orange {
@@ -116,17 +119,23 @@
   }
 
   hr {
-    margin: 12rem 5rem 5rem;
-    border-top: 1px solid @white;
+    margin: 8rem 5rem 3rem;
+    visibility: hidden;
   }
 
   .bot-block {
     font-size: 1.5rem;
-    line-height: 1.4;
+    line-height: 1.6;
     margin: 2rem 5rem 0;
-    padding-bottom: 2.4rem;
+    padding: 2.4rem 1rem;
+    background: rgba(110, 110, 110, 0.8);
+    border-radius: 1rem;
 
     .icons {
+      & > div:first-of-type {
+        margin-bottom: 2rem;
+      }
+
       a {
         margin: 0 2rem;
         filter: grayscale(50%);
@@ -135,20 +144,25 @@
           filter: grayscale(0%);
         }
       }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
     }
 
     .conf {
       line-height: 1.7;
       text-align: left;
+    }
 
-      a {
-        color: white;
+    a {
+      color: white;
+      text-decoration: underline;
+
+      &:hover {
+        color: @dark-gray;
         text-decoration: underline;
-
-        &:hover {
-          color: @dark-gray;
-          text-decoration: underline;
-        }
       }
     }
 
@@ -159,5 +173,9 @@
 
   .modal-content {
     color: black;
+  }
+
+  .main-footer {
+    padding-bottom: 2rem;
   }
 }
