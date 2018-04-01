@@ -130,8 +130,20 @@ button {
   .mid-block .type-phone form > * {
     position: static !important;
   }
+  .mid-block .type-phone form .text-area::-webkit-input-placeholder {
+    text-align: center;
+  }
+  .mid-block .type-phone form .text-area::-moz-placeholder {
+    text-align: center;
+  }
+  .mid-block .type-phone form .text-area:-moz-placeholder {
+    text-align: center;
+  }
+  .mid-block .type-phone form .text-area:-ms-input-placeholder {
+    text-align: center;
+  }
   .bot-block {
-    line-height: 1 !important;
+    line-height: 1.5 !important;
     padding: 0.5rem !important;
   }
   .bot-block > div.icons {
