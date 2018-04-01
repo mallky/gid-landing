@@ -251,7 +251,7 @@ button {
 }
 #block .mid-block .type-phone .text-area {
   border-radius: 0.9rem;
-  background-color: #cbcbcb;
+  background-color: #6B757D;
   width: 24rem;
   height: 4.1rem;
   border: 1px solid transparent;
@@ -293,10 +293,9 @@ button {
 }
 #block .bot-block .icons a {
   margin: 0 2rem;
-  filter: grayscale(50%);
 }
 #block .bot-block .icons a:hover {
-  filter: grayscale(0%);
+  filter: sepia(100%);
 }
 #block .bot-block .icons img {
   width: 50px;
