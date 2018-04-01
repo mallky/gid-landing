@@ -130,10 +130,14 @@ button {
   .mid-block .type-phone form > * {
     position: static !important;
   }
+  .bot-block {
+    line-height: 1 !important;
+    padding: 0.5rem !important;
+  }
   .bot-block > div.icons {
-    font-size: 3rem;
+    font-size: 2.3rem;
     order: 1;
-    margin-bottom: 5rem;
+    margin: 1rem 0 3rem;
   }
   .bot-block > div.col-sm-4:first-of-type {
     order: 2;
@@ -247,7 +251,7 @@ button {
 }
 #block .mid-block .type-phone .text-area {
   border-radius: 0.9rem;
-  background-color: #8f8f8f;
+  background-color: #cbcbcb;
   width: 24rem;
   height: 4.1rem;
   border: 1px solid transparent;
@@ -307,7 +311,7 @@ button {
   text-decoration: underline;
 }
 #block .bot-block a:hover {
-  color: #8f8f8f;
+  color: #cbcbcb;
   text-decoration: underline;
 }
 #block .bot-block .info {
